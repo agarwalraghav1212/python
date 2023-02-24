@@ -1,15 +1,11 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'python'
+    }
     stages {
-        stage('Build') {
+        stage('Run Python Script') {
             steps {
-                sh 'pip i'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'pip start'
+                sh 'python3 main.py'
             }
         }
     }
